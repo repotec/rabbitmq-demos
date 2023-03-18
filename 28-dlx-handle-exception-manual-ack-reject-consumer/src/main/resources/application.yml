@@ -1,0 +1,9 @@
+spring:
+  main:
+    banner-mode: off
+  rabbitmq:
+    host: 172.29.154.144
+    port: 5672
+    username: guest
+    password: guest
+    listener:      simple:        acknowledge-mode: manual
