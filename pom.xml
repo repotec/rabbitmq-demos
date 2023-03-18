@@ -92,5 +92,7 @@
 		<module>30-publish-dlx-to-ttl-producer</module>
 		<module>30-send-ttl-to-dlx-producer</module>
 		<module>30-send-ttl-to-dlx-consumer</module>
+		<module>31-handle-retry-dlx-ttl-manually-consumer</module>
+		<module>31-handle-retry-dlx-ttl-manually-producer</module>
 	</modules>
 </project>

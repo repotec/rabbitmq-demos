@@ -32,6 +32,6 @@ public class Consumer {
 		}else {
 			logger.info("picture {}", picture);
 		}
-		//channel.basicAck(tag, false); //disable it only if the queue and exchange marked as auto-delete
+		channel.basicAck(tag, false); //disable it only if the queue and exchange marked as auto-delete
 	}
 }

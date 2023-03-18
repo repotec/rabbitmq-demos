@@ -28,7 +28,7 @@ public class RabbitSchemaConfig {
 	 * 
 	 * We have two cases:
 	 * first case:  The consumer will raise an exception if the image size in more than 9000 KB, then will send the message to DLX queue.
-	 * second case: The consumer will not consume the message for any reason which lead to republish the message to DLX queue.
+	 * second case: There is no consumer-client to consume the message for any reason, which lead to republish the message to DLX queue automatically.
 	 */
 	@Bean
 	public Declarables rabbitSchema() {
@@ -37,7 +37,7 @@ public class RabbitSchemaConfig {
 				   			
 							   new Queue(DLX_QUEUE, false, false, true),
 							   new Queue(WEB_QUEUE, false, false, true, Map.of("x-dead-letter-exchange", DLX_EXCHANGE)),
-							   new Queue(MOBILE_QUEUE,  false, false, true, Map.of("x-dead-letter-exchange", DLX_EXCHANGE, "x-message-ttl", 5000)),
+							   new Queue(MOBILE_QUEUE,  false, false, true, Map.of("x-dead-letter-exchange", DLX_EXCHANGE, "x-message-ttl", 6000)),
 							   
 							   new Binding(WEB_QUEUE, DestinationType.QUEUE, MAIN_EXCHANGE, "web", null),
 							   new Binding(MOBILE_QUEUE, DestinationType.QUEUE, MAIN_EXCHANGE, "mobile", null),
