@@ -19,16 +19,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.Channel;
 
 @Service
-public class ImageConsumer {
+public class VectorConsumer {
 
-	public static final Logger log = LoggerFactory.getLogger(ImageConsumer.class);
+	public static final Logger log = LoggerFactory.getLogger(VectorConsumer.class);
 	
 	private static final String DEAD_EXCHANGE_NAME = "x.dead";
 
 	@Autowired
 	private ObjectMapper objectMapper;
 
-	@RabbitListener(queues = "q.image.work")
+	@RabbitListener(queues = "q.vector.work")
 	public void listen(Message message, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long deliveryTag)
 			throws InterruptedException, JsonParseException, JsonMappingException, IOException {
 		try {
