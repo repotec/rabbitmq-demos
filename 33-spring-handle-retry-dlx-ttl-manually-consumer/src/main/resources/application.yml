@@ -1,0 +1,22 @@
+spring:
+  main:
+    banner-mode: off
+  rabbitmq:
+    host: 192.168.1.2
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: auto  # by default acknowledge-mode is auto
+        retry:
+          enabled: true         # Whether or not publishing retries are enabled.
+          initial-interval: 3s  # Interval between the first and second attempt to publish a message.
+          max-interval: 10s     # Maximum number of attempts to publish a message.
+          max-attempts: 5       # Maximum number of attempts to publish a message.
+          multiplier: 2         # A multiplier to apply to the previous delivery retry interval.
+
+# create short patter to be able to see the retry mechanism
+logging:
+  pattern:
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(---){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"

@@ -92,5 +92,11 @@
 		<module>31-handle-retry-dlx-ttl-manually-producer</module>
 		<module>32-handle-fanout-retry-dlx-ttl-manually-producer</module>
 		<module>32-handle-fanout-retry-dlx-ttl-manually-consumer</module>
+		<module>
+			33-spring-handle-retry-dlx-ttl-manually-consumer
+		</module>
+		<module>
+			33-spring-handle-retry-dlx-ttl-manually-producer
+		</module>
 	</modules>
 </project>
