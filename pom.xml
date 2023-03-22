@@ -82,23 +82,15 @@
 		<module>26-consumer-exception-without-DLX-consumer</module>
 		<module>27-dlx-handle-exception-producer</module>
 		<module>27-dlx-handle-exception-consumer</module>
-		<module>
-			28-dlx-handle-exception-manual-ack-reject-producer
-		</module>
-		<module>
-			28-dlx-handle-exception-manual-ack-reject-consumer
-		</module>
+		<module>28-dlx-handle-exception-manual-ack-reject-producer</module>
+		<module>28-dlx-handle-exception-manual-ack-reject-consumer</module>
 		<module>30-send-dlx-to-ttl-queue</module>
 		<module>30-publish-dlx-to-ttl-producer</module>
 		<module>30-send-ttl-to-dlx-producer</module>
 		<module>30-send-ttl-to-dlx-consumer</module>
 		<module>31-handle-retry-dlx-ttl-manually-consumer</module>
 		<module>31-handle-retry-dlx-ttl-manually-producer</module>
-		<module>
-			32-handle-fanout-retry-dlx-ttl-manually-producer
-		</module>
-		<module>
-			32-handle-fanout-retry-dlx-ttl-manually-consumer
-		</module>
+		<module>32-handle-fanout-retry-dlx-ttl-manually-producer</module>
+		<module>32-handle-fanout-retry-dlx-ttl-manually-consumer</module>
 	</modules>
 </project>

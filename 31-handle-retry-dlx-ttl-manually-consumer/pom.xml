@@ -6,6 +6,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>31-handle-retry-dlx-ttl-manually-consumer</artifactId>
-  <name>31-handle-retry-dlx-ttl-manually-consumer</name>
-  <description>31-handle-retry-dlx-ttl-manually-consumer</description>
+  <name>handle-retry-dlx-ttl-manually-consumer</name>
+  <description>handle-retry-dlx-ttl-manually-consumer</description>
 </project>
