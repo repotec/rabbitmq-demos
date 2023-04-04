@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.spring.rabbitmq.demo</groupId>
-  <artifactId>39-one-queue-against-muliple-message-types-consumer</artifactId>
-  <name>one-queue-against-muliple-message-types-consumer</name>
-  <description>one-queue-against-muliple-message-types-consumer</description>
+  <artifactId>39-one-queue-against-multiple-message-types-consumer</artifactId>
+  <name>one-queue-against-multiple-message-types-consumer</name>
+  <description>one-queue-against-multiple-message-types-consumer</description>
 </project>

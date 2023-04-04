@@ -5,8 +5,7 @@
     <artifactId>rabbitmq-practices</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.spring.rabbitmq.demo</groupId>
-  <artifactId>39-one-queue-against-muliple-message-types-producer</artifactId>
-  <name>one-queue-against-muliple-message-types-producer</name>
-  <description>one-queue-against-muliple-message-types-producer</description>
+  <artifactId>39-one-queue-against-multiple-message-types-producer</artifactId>
+  <name>one-queue-against-multiple-message-types-producer</name>
+  <description>one-queue-against-multiple-message-types-producer</description>
 </project>
