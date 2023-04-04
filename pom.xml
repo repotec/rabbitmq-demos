@@ -104,5 +104,25 @@
 		<module>
 			34-spring-handle-fanout-retry-dlx-ttl-manually-producer
 		</module>
+		<module>35-spring-jakson-converter-in-rabbitMQ-producer</module>
+		<module>35-spring-jakson-converter-in-rabbitMQ-consumer</module>
+		<module>
+			35-spring-jackson-converter-in-rabbitMQ-producer
+		</module>
+		<module>
+			35-spring-jackson-converter-in-rabbitMQ-consumer
+		</module>
+		<module>36-spring-rabbitMQ-scheduling-producer</module>
+		<module>36-spring-rabbitMQ-scheduling-consumer</module>
+		<module>37-consumer-prefetch-producer</module>
+		<module>37-consumer-prefetch-consumer</module>
+		<module>38-multiple-consumer-prefetch-producer</module>
+		<module>38-multiple-consumer-prefetch-consumer</module>
+		<module>
+			39-one-queue-against-muliple-message-types-producer
+		</module>
+		<module>
+			39-one-queue-against-muliple-message-types-consumer
+		</module>
 	</modules>
 </project>
