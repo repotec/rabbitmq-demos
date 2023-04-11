@@ -108,7 +108,6 @@
 		<module>38-multiple-consumer-prefetch-consumer</module>
 		<module>39-one-queue-against-multiple-message-types-consumer</module>
 		<module>39-one-queue-against-multiple-message-types-producer</module>
-		<module>40-consistance-hash-exchange-consumer</module>
 		<module>40-consistence-hash-exchange-producer</module>
 	</modules>
 </project>
