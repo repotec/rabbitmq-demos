@@ -8,7 +8,7 @@ import com.demo.event.message.MessagingException;
 
 public class Client {
     // MUST replace this URL to your instance on RabbitMQ
-    private static final String HOST_NAME = "172.29.154.144";
+    private static final String HOST_NAME = "dev-server";
     private static final String PORT_NUMBER = "5672";
     private static final String USERNAME = "guest";
     private static final String PASSWORD = "guest";

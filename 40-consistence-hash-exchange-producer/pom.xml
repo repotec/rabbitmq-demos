@@ -1,0 +1,12 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.demo.rabbitmq</groupId>
+    <artifactId>rabbitmq-practices</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.spring.rabbitmq.demo</groupId>
+  <artifactId>40-consistence-hash-exchange-producer</artifactId>
+  <name>consistence-hash-exchange-producer</name>
+  <description>consistence-hash-exchange-producer</description>
+</project>
