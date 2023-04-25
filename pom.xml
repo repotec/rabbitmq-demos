@@ -9,7 +9,7 @@
 		<version>2.6.7</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.demo.rabbitmq</groupId>
+	<groupId>com.spring.rabbitmq.demo</groupId>
 	<artifactId>rabbitmq-practices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rabbitmq-practices</name>
@@ -109,5 +109,8 @@
 		<module>39-one-queue-against-multiple-message-types-consumer</module>
 		<module>39-one-queue-against-multiple-message-types-producer</module>
 		<module>40-consistence-hash-exchange-producer</module>
+		<module>41-single-active-consumer-producer</module>
+		<module>41-single-active-consumer-consumer</module>
+		<module>42-reliable-publish-producer</module>
 	</modules>
 </project>
