@@ -1,4 +1,5 @@
-package com.demo.event.message;
+package com.java.rabbitmq.message;
+
 
 public interface MessagingService {
 	  /**
@@ -27,5 +28,9 @@ public interface MessagingService {
      * This will stop the connection
      */
     public void stop() throws MessagingException;
+
+	void publishAutoAck(String data) throws MessagingException;
+
+	void publishManualPositiveAck(String data) throws MessagingException;
 
 }

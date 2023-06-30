@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.MessageDeliveryException;
 import org.springframework.stereotype.Service;
 
 import com.demo.model.Picture;
@@ -27,7 +28,7 @@ public class ImageConsumers {
 		MessageConsumer(message, true);
 	}
 	
-	@RabbitListener(queues = "q.vector.work")
+	@RabbitListener(queues = {"q.image.work"})
 	public void listenVectorWorkQueue(String message) throws  IOException {
 		MessageConsumer(message, false);
 	}
@@ -41,7 +42,10 @@ public class ImageConsumers {
 			if (picture.getSize() > 9000) {
 				// throw exception, we will use DLX handler for retry mechanism
 				throw new IllegalArgumentException("Size too large");
-			} 
+			} else if (picture.getType().equals("jpg")) {
+				// throw exception, we will be ignored from retry mechanism - will be send directly to DLX
+				throw new MessageDeliveryException("wrong image type");
+			}
 		}
 		
 		log.info("Processing image : " + picture.getName());

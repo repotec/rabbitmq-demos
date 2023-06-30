@@ -49,9 +49,9 @@ public class RabbitSchemaConfig {
 							   
 							   //if messages does not be handled and moved to dead exchange within 4 seconds it will be lost
 							   
-							   //messages that are in wait queue (which send by TTL argument in work queue) consumer will try to re-process them, if the
-							   //consumer fail to re-process them, then will return them back to work queue, it consumer fails after 3 attempts will send them to
-							   //dead queue
+							   //messages that are in wait queue (which send by TTL Time-to-live argument in work queue) consumer will try to re-process them. 
+							   //if the consumer fail to re-process them, then will return them back to work queue, it consumer fails after 3 attempts will 
+							   //send them to dead queue
 							   
 							   new Queue(Q_IMAGE_WAIT, true, false, false, Map.of("x-dead-letter-exchange", X_WORK, "x-message-ttl", 4000)),
 							   new Queue(Q_VECTOR_WAIT, true, false, false, Map.of("x-dead-letter-exchange", X_WORK, "x-message-ttl", 4000)),

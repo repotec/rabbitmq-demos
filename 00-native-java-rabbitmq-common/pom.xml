@@ -7,19 +7,18 @@
 		<artifactId>rabbitmq-practices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
-	<artifactId>01-rabbitmq-java-plain</artifactId>
-	<name>01-rabbitmq-java-plain</name>
-	<description>01-rabbitmq-java-plain</description>
-
-
+	<groupId>com.java.rabbitmq.demo</groupId>
+	<artifactId>00-native-java-rabbitmq-common</artifactId>
+	<name>native-java-rabbitmq-common</name>
+	<description>native-java-rabbitmq-common</description>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
-			<groupId>com.java.rabbitmq.demo</groupId>
-			<artifactId>00-native-java-rabbitmq-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
-
 </project>
-  

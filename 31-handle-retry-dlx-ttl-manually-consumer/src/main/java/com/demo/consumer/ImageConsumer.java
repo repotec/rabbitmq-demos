@@ -42,7 +42,7 @@ public class ImageConsumer {
 			} else {
 				log.info("Creating thumbnail & publishing : " + picture);
 				
-				// you must acknowledge that message already processed
+				// you must acknowledge that message already processed - multiple = false
 				channel.basicAck(deliveryTag, false);
 			}
 		} catch (IOException e) {

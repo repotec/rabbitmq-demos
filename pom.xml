@@ -112,5 +112,7 @@
 		<module>41-single-active-consumer-producer</module>
 		<module>41-single-active-consumer-consumer</module>
 		<module>42-reliable-publish-producer</module>
+		<module>43-alternate-exchange-producer</module>
+		<module>43-alternate-exchange-consumer</module>
 	</modules>
 </project>

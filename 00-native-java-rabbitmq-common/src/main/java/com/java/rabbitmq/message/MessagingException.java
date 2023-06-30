@@ -1,4 +1,5 @@
-package com.demo.event.message;
+package com.java.rabbitmq.message;
+
 
 public class MessagingException  extends Exception {
     public MessagingException(String message) {

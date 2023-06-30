@@ -1,8 +1,5 @@
 package com.demo;
 
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,20 +17,22 @@ public class SpringHandleRetryDlxTtlManuallyProducer implements CommandLineRunne
 	@Autowired
 	PictureProducer pictureProducer;
 		
-	private final List<String> types = List.of("jpg", "png", "svg");
-
-	private final List<String> source = List.of("mobile", "web");
-	
 	@Override
 	public void run(String... args) throws Exception {
-		for (int i = 0; i < 1; i++) {
-			Picture picture = new Picture();
-			picture.setName("picture " + i);
-			picture.setType(types.get(i % types.size()));
-			picture.setSource(source.get(i % source.size()));
-			picture.setSize(ThreadLocalRandom.current().nextLong(9000, 10000));
-			
-			pictureProducer.sendMessage(picture);
-		}
+		Picture picture1 = new Picture();
+		picture1.setName("picture " + 1);
+		picture1.setType("jpg");
+		picture1.setSource("web");
+		picture1.setSize(800);
+		
+		pictureProducer.sendMessage(picture1);
+		
+		Picture picture2 = new Picture();
+		picture2.setName("picture " + 2);
+		picture2.setType("png");
+		picture2.setSource("web");
+		picture2.setSize(1000);
+		
+		pictureProducer.sendMessage(picture2);
 	}
 }
