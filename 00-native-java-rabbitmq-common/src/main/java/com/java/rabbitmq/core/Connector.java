@@ -11,7 +11,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class RabbitMqConnection {
+public class Connector {
 	private final String HOST_NAME;
 	private final String PORT_NUMBER;
 	private final String USERNAME;
@@ -26,13 +26,12 @@ public class RabbitMqConnection {
 			throw new MessagingException("Connection to MQ already open!!!");
 		}
 		connectionFactory = new ConnectionFactory();
-
+		connectionFactory.setUsername(USERNAME);
+		connectionFactory.setPassword(PASSWORD);
+		connectionFactory.setHost(HOST_NAME);
+		connectionFactory.setPort(Integer.parseInt(PORT_NUMBER));
+		
 		try {
-			connectionFactory.setUsername(USERNAME);
-			connectionFactory.setPassword(PASSWORD);
-			connectionFactory.setHost(HOST_NAME);
-			connectionFactory.setPort(Integer.parseInt(PORT_NUMBER));
-
 			connection = connectionFactory.newConnection();
 			channel = connection.createChannel();
 		} catch (Exception e) {

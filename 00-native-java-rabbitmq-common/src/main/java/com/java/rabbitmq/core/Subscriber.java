@@ -1,20 +1,18 @@
 package com.java.rabbitmq.core;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.function.Predicate;
 
+import com.java.rabbitmq.core.callbacks.SubscriberValidationCallback;
 import com.java.rabbitmq.message.MessagingException;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DefaultConsumer;
-import com.rabbitmq.client.DeliverCallback;
 import com.rabbitmq.client.Envelope;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class RabbitMqSubscribe {
+public class Subscriber {
 
 	private final String AMQP_QUEUE;
 	private final Channel channel;
@@ -43,7 +41,7 @@ public class RabbitMqSubscribe {
 							 autoAck,
 							"my-consumerTag",
 							(consumerTag, delivery) -> {
-								String message = convertMessage(delivery.getBody());
+								String message = new String(delivery.getBody(), "UTF-8");;
 								System.out.println("consumerTag:" + consumerTag + "|Consumed: " + message);
 							},
 			
@@ -65,7 +63,7 @@ public class RabbitMqSubscribe {
 								autoAck,
 								"my-consumerTag",
 								(consumerTag, delivery) -> {
-									String message = convertMessage(delivery.getBody());
+									String message = new String(delivery.getBody(), "UTF-8");
 									System.out.println("consumerTag:" + consumerTag + "|Consumed: " + message);
 			
 									channel.basicAck(delivery.getEnvelope().getDeliveryTag(), multiple);
@@ -80,7 +78,7 @@ public class RabbitMqSubscribe {
 	}
 	
 	
-	public void subscribeNegativeAck(SubscriberCallback<String> callbackValidation) throws MessagingException, IOException {
+	public void subscribeNegativeAck(SubscriberValidationCallback<String> callbackValidation) throws MessagingException, IOException {
 		boolean autoAck = false;
 		boolean multiple = false; 	//multiple messages
 		boolean requeue = false; 
@@ -108,15 +106,5 @@ public class RabbitMqSubscribe {
 							consumerTag -> {		
 								System.out.println("CancelCallback|consumerTag:" + consumerTag);
 							});
-	}
-	
-	public String convertMessage(byte[] body) {
-		try {
-			return new String(body, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		
-		return null;
 	}
 }

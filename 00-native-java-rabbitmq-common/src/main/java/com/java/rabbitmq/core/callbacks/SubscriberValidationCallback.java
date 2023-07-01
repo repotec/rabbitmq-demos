@@ -1,8 +1,8 @@
-package com.java.rabbitmq.core;
+package com.java.rabbitmq.core.callbacks;
 
 import java.io.IOException;
 
 @FunctionalInterface
-public interface SubscriberCallback<M> {
+public interface SubscriberValidationCallback<M> {
 	boolean check(M message) throws IOException;
 }
